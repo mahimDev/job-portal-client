@@ -1,10 +1,13 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Auth/AuthProvider";
 import Lottie from "lottie-react";
 import lottieData from '../../../public/lottie.json';
 const Login = () => {
     const { signInUser } = useContext(AuthContext)
+    const location = useLocation()
+    const navigate = useNavigate()
+    console.log(location)
     const isDark = true
     const handleRegistration = e => {
         e.preventDefault()
@@ -17,6 +20,7 @@ const Login = () => {
         signInUser(email, password)
             .then(res => {
                 console.log(res.user)
+                navigate(location?.state || '/')
             })
             .then(err => {
                 console.log(err)
