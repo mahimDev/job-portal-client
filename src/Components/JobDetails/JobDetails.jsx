@@ -43,11 +43,11 @@ const JobDetails = () => {
 
                         </div>
 
-                        <button
+                        <Link to={`/job-apply/${_id}`}>   <button
                             className="border rounded py-1 px-3 font-medium bg-[#2a7715] text-white hover:text-[#2a7715] hover:bg-white hover:border-[#2a7715]"
                         >
                             Apply
-                        </button>
+                        </button></Link>
                     </div>
                 </div>
             </div>

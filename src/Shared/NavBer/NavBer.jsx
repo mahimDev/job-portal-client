@@ -20,9 +20,9 @@ const NavBer = () => {
         <>
             <NavLink to={"/"}><li>Home</li></NavLink>
             <NavLink to={'allVisas'}><li>All visas</li></NavLink>
-            <NavLink to={'addVisa'} ><li>Add Visa</li></NavLink>
-            <NavLink to={'myAddedVisas'}><li>My added visas</li></NavLink>
-            <NavLink to={'myVisaApplication'}><li>My Visa applications</li></NavLink>
+            <NavLink to={'add-job'} ><li>Add Jobs</li></NavLink>
+            <NavLink to={'my-added-job'}><li>My added jobs</li></NavLink>
+            <NavLink to={'my-job-application'}><li>My Job applications</li></NavLink>
         </>
     return (
         <div className={`top-0 sticky z-30 ${isDark ? 'bg-darkBg/40 text-gold border-gold' : 'bg-[#d4af37b7]'}  backdrop-blur-xl`}>
