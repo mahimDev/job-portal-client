@@ -20,7 +20,7 @@ const JobsCart = (props = {}) => {
         title,
         _id,
     } = job
-    console.log(job)
+
     return (
         <div>
             <div>

@@ -3,11 +3,12 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Auth/AuthProvider";
 import Lottie from "lottie-react";
 import lottieData from '../../../public/lottie.json';
+import axios from "axios";
 const Login = () => {
     const { signInUser } = useContext(AuthContext)
     const location = useLocation()
     const navigate = useNavigate()
-    console.log(location)
+    // console.log(location)
     const isDark = true
     const handleRegistration = e => {
         e.preventDefault()
@@ -20,7 +21,14 @@ const Login = () => {
         signInUser(email, password)
             .then(res => {
                 console.log(res.user)
-                navigate(location?.state || '/')
+                const user = { email: email }
+                axios.post(`http://localhost:3000/jwt`, user, {
+                    withCredentials: true
+                })
+                    .then(res => {
+                        console.log(res.data)
+                    })
+                // navigate(location?.state || '/')
             })
             .then(err => {
                 console.log(err)
